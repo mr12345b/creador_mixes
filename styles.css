@@ -1,0 +1,245 @@
+/* =========================================
+   ESTILOS GLOBALES
+   ========================================= */
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  background: #191414 !important;
+  min-height: 100vh;
+  min-height: 100dvh; /* Altura perfecta para navegadores móviles */
+}
+
+.spotify-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh; /* Asegura que toda la app ocupe la pantalla */
+}
+
+/* =========================================
+   HEADER (ENCABEZADO)
+   ========================================= */
+.spotify-header {
+  background: #191414;
+  color: #fff;
+  padding: 1.5rem 1rem; /* Un poco más compacto para ganar espacio */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(30,185,84,0.15);
+  box-sizing: border-box;
+}
+
+.spotify-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.spotify-header p {
+  margin: 0;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL (AQUÍ OCURRE LA MAGIA DEL CENTRADO)
+   ========================================= */
+.imagenes-main {
+  flex: 1; /* Toma todo el espacio vertical sobrante debajo del header */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center;     /* Centra el contenido horizontalmente */
+  padding: 2rem 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.formularios-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start; /* Evita que una tarjeta estire a la otra si tienen distinta altura */
+  width: 100%;
+}
+
+/* =========================================
+   TARJETAS DE FORMULARIO
+   ========================================= */
+.upload-form {
+  background: #232323; 
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(30,185,84,0.08), 0 2px 8px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.upload-form h2 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  text-align: left;
+}
+
+/* =========================================
+   INPUTS Y BOTONES
+   ========================================= */
+.input-file, .input-artista, .input-num-listas, .input-json, textarea, select {
+  background: #191414;
+  color: #fff;
+  border: 1px solid #1db954;
+  border-radius: 10px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.2s;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.input-file:focus, .input-artista:focus, .input-num-listas:focus, .input-json:focus, textarea:focus, select:focus {
+  border: 2px solid #1db954;
+  outline: none;
+}
+
+.upload-btn {
+  background: linear-gradient(90deg, #1db954 60%, #17a74a 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(30,185,84,0.12);
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.upload-btn:hover {
+  background: linear-gradient(90deg, #17a74a 60%, #1db954 100%);
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(30,185,84,0.18);
+}
+
+.upload-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   GRILLA DE IMÁGENES PREVIAS
+   ========================================= */
+.imagenes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.imagen-card {
+  background: #232323;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.imagen-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(30,185,84,0.25);
+  border: 2px solid #1db954;
+}
+
+.imagen-preview {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background: #191414;
+  border: 1px solid #333;
+}
+
+.imagen-info {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.imagen-nombre {
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.imagen-artista {
+  color: #1db954;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 0.3rem;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
+   ========================================= */
+@media (max-width: 768px) {
+  .formularios-container { 
+    flex-direction: column; 
+    align-items: center;
+  }
+  
+  .upload-form { 
+    max-width: 100%; 
+    padding: 2rem 1.5rem; 
+  }
+  
+  .spotify-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .imagenes-grid { 
+    gap: 1rem; 
+  }
+  
+  .imagen-card { 
+    width: 45%; 
+    padding: 1rem; 
+  }
+  
+  .imagen-preview { 
+    height: 120px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .imagen-card {
+    width: 100%; /* En teléfonos muy pequeños, una imagen por fila */
+  }
+}
