@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+python-dotenv
+itsdangerous
+spotipy>=2.24
+SQLAlchemy>=1.4
+psycopg2-binary
+passlib
+bcrypt==3.2.2
+APScheduler>=3.10,<4
+requests
+pytz
+pillow
+cryptography
