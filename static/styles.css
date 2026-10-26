@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  background: #191414 !important;
+  min-height: 100vh;
+}
+/* Esta clase fuerza al body a medir exactamente el 100% de la pantalla y centra su contenido */
+.login-body {
+    margin: 0;
+    padding: 1rem; /* Margen de seguridad para que no toque los bordes en móvil */
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    background: #191414 !important;
+    
+    /* 100dvh (Dynamic Viewport Height) es el estándar actual para centrar perfecto en móviles */
+    min-height: 100vh;
+    min-height: 100dvh; 
+    width: 100%;
+    
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center;     /* Centrado vertical matemático */
+}
+
+.login-box {
+    background: #232323;
+    border-radius: 24px;
+    padding: 3.5rem 2.5rem;
+    box-shadow: 0 8px 32px rgba(30,185,84,0.1), 0 2px 8px rgba(0,0,0,0.2);
+    
+    /* Responsive: Ocupa el 100% del espacio disponible hasta un máximo de 380px */
+    width: 100%;
+    max-width: 380px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.login-box h2 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.login-box p.subtitle {
+    color: #b3b3b3;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.login-box form {
+    width: 100%;
+}
+
+.login-box .input-artista {
+    background: #121212; 
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.login-box .input-artista:focus {
+    border-color: #1db954;
+    outline: none;
+    background: #191414;
+    box-shadow: 0 0 0 2px rgba(30,185,84,0.2);
+}
+
+.login-box .upload-btn {
+    background: #1db954;
+    color: #000; 
+    border: none;
+    border-radius: 30px; 
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    width: 100%;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-box .upload-btn:hover {
+    background: #1ed760;
+    transform: scale(1.04);
+}
+
+/* =========================================
+   MEDIA QUERY PARA DISPOSITIVOS MÓVILES
+   ========================================= */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 2.5rem 1.5rem; /* Reducimos el padding interno para que respire en móviles */
+        border-radius: 20px;
+    }
+    
+    .login-box h2 {
+        font-size: 1.75rem; /* Letra un toque más pequeña */
+    }
+    
+    .login-box .upload-btn {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+}
